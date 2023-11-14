@@ -43,6 +43,7 @@ android {
     buildFeatures {
         compose = true
     }
+    //Compose compiler version
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.7"
     }
