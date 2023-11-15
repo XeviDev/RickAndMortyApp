@@ -1,4 +1,4 @@
-package com.xevidev.rickandmortyapp.data
+package com.xevidev.rickandmortyapp.data.models
 
 import com.google.gson.annotations.SerializedName
 
