@@ -5,7 +5,7 @@ import com.xevidev.rickandmortyapp.data.models.CharactersModel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Character(
+data class CharacterDomain(
     val id: Int,
     val name: String,
     val status: String,
@@ -13,4 +13,4 @@ data class Character(
     val image: String
 ) : Parcelable
 
-fun CharactersModel.parseDomain() = Character(id, name, status, species, image)
+fun CharactersModel.parseDomain() = CharacterDomain(id, name, status, species, image)
