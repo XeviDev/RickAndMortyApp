@@ -3,18 +3,22 @@ package com.xevidev.rickandmortyapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.ramcosta.composedestinations.DestinationsNavHost
+import com.ramcosta.composedestinations.navigation.dependency
 import com.xevidev.rickandmortyapp.ui.theme.RickAndMortyAppTheme
-import dagger.hilt.EntryPoint
+import com.xevidev.rickandmortyapp.view.CharactersViewModel
+import com.xevidev.rickandmortyapp.view.NavGraphs
+import com.xevidev.rickandmortyapp.view.destinations.CharactersListScreenDestination
+import dagger.hilt.android.AndroidEntryPoint
 
-@EntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val charactersViewModel: CharactersViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -24,25 +28,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    DestinationsNavHost(navGraph = NavGraphs.root,
+                        dependenciesContainerBuilder = {
+                            dependency(CharactersListScreenDestination) { charactersViewModel }
+                        })
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RickAndMortyAppTheme {
-        Greeting("Android")
     }
 }
