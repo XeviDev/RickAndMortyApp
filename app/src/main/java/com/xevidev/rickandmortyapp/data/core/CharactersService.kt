@@ -9,7 +9,7 @@ class CharactersService @Inject constructor(private val apiClient: CharactersApi
     suspend fun getCharactersList(): List<CharactersModel> {
         return withContext(Dispatchers.IO) {
             val response = apiClient.getCharacters()
-            response.body()?: emptyList()
+            response.body()?.result?: emptyList()
         }
     }
 }

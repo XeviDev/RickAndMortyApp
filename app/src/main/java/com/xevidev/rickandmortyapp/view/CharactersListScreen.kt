@@ -1,6 +1,7 @@
 package com.xevidev.rickandmortyapp.view
 
 import android.util.Log
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -15,8 +16,12 @@ fun CharactersListScreen(
     charactersViewModel: CharactersViewModel,
     navigator: DestinationsNavigator
 ){
+    charactersViewModel.getCharacters()
     val characters by charactersViewModel.characters.collectAsState()
+
     if(characters.isEmpty()){
         Log.e("Xevi", "LISTA VACIA")
+    }else{
+        Text(text = characters.toString())
     }
 }
