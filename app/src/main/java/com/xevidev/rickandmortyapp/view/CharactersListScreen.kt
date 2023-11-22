@@ -1,10 +1,14 @@
 package com.xevidev.rickandmortyapp.view
 
-import android.util.Log
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -19,9 +23,11 @@ fun CharactersListScreen(
     charactersViewModel.getCharacters()
     val characters by charactersViewModel.characters.collectAsState()
 
-    if(characters.isEmpty()){
-        Log.e("Xevi", "LISTA VACIA")
-    }else{
-        Text(text = characters.toString())
+    LazyColumn{
+
+        items(characters){ character ->
+            Text(text = character.name, modifier = Modifier.padding(8.dp))
+        }
     }
 }
+
