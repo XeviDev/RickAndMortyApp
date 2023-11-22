@@ -12,7 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -45,14 +48,23 @@ fun CharacterCard(character: CharacterDomain) {
     ) {
         Row {
             AsyncImage(
-                model = "https://example.com/image.jpg",
+                model = character.image,
                 contentDescription = null,
             )
             Column {
-                Text(text = character.name, modifier = Modifier.padding(8.dp))
-                Text(text = character.species, modifier = Modifier.padding(8.dp))
-                Text(text = character.status, modifier = Modifier.padding(8.dp))
+               DataCard(character = character)
             }
         }
     }
+}
+
+@Composable
+fun DataCard(character: CharacterDomain){
+    Text(text = character.name,
+        modifier = Modifier.padding(8.dp),
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 24.sp
+    )
+    Text(text = character.status+"-"+character.species,
+        modifier = Modifier.padding(8.dp))
 }
