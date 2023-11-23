@@ -44,7 +44,7 @@ fun CharacterCard(character: CharacterDomain) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .padding(vertical = 8.dp, horizontal = 32.dp)
     ) {
         Row {
             AsyncImage(
@@ -63,8 +63,9 @@ fun DataCard(character: CharacterDomain){
     Text(text = character.name,
         modifier = Modifier.padding(8.dp),
         fontWeight = FontWeight.ExtraBold,
-        fontSize = 24.sp
+        fontSize = 16.sp
     )
     Text(text = character.status+"-"+character.species,
         modifier = Modifier.padding(8.dp))
 }
+
