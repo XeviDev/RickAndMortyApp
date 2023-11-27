@@ -67,7 +67,7 @@ fun DataCard(character: CharacterDomain){
         fontSize = 16.sp
     )
     Text(text = character.status+"-"+character.species,
-        modifier = Modifier.padding(8.dp))
+        modifier = Modifier.padding(8.dp)) 
 }
 
 @Composable
