@@ -29,6 +29,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.xevidev.rickandmortyapp.domain.model.CharacterDomain
+import com.xevidev.rickandmortyapp.view.destinations.SingleCharacterScreenDestination
 
 @Composable
 @RootNavGraph(start = true)
@@ -45,18 +46,20 @@ fun CharactersListScreen(
         LazyColumn {
 
             items(characters) { character ->
-                CharacterCard(character = character)
+                CharacterCard(character = character, navigator = navigator)
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CharacterCard(character: CharacterDomain) {
+fun CharacterCard(character: CharacterDomain, navigator: DestinationsNavigator) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp, horizontal = 32.dp)
+            .padding(vertical = 8.dp, horizontal = 32.dp),
+        onClick = {navigator.navigate(SingleCharacterScreenDestination(character = character))}
     ) {
         Row {
             AsyncImage(
