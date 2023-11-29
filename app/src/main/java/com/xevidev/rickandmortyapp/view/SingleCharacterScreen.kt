@@ -61,7 +61,7 @@ fun ContentCharacter(character: CharacterDomain) {
                     .background(Color.Blue)
             ) {
                 CharacterInfo(character)
-            }
+            } 
         }
 
     }
