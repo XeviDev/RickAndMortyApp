@@ -63,7 +63,7 @@ fun ContentCharacter(character: CharacterDomain) {
                 CharacterInfo(character)
             } 
         }
-
+ 
     }
 }
 
