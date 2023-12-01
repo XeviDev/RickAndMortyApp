@@ -64,7 +64,7 @@ fun ContentCharacter(character: CharacterDomain) {
             } 
         }
  
-    }
+    } 
 }
 
 @Composable
