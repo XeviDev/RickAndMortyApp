@@ -55,7 +55,7 @@ fun ContentCharacter(character: CharacterDomain) {
                 .clip(shape = RoundedCornerShape(32.dp, 32.dp, 0.dp, 0.dp)),
             contentAlignment = Alignment.TopCenter
         ) {
-            Column(
+            Column( 
                 Modifier
                     .fillMaxSize()
                     .background(Color.Blue)
