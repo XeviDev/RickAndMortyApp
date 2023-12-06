@@ -54,7 +54,7 @@ fun ContentCharacter(character: CharacterDomain) {
                 .fillMaxWidth()
                 .clip(shape = RoundedCornerShape(32.dp, 32.dp, 0.dp, 0.dp)),
             contentAlignment = Alignment.TopCenter
-        ) {
+        ) { 
             Column( 
                 Modifier
                     .fillMaxSize()
