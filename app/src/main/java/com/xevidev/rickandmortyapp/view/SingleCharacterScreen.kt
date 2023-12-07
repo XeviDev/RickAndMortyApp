@@ -51,7 +51,7 @@ fun ContentCharacter(character: CharacterDomain) {
         }
         Box(
             Modifier
-                .fillMaxWidth() 
+                .fillMaxWidth()
                 .clip(shape = RoundedCornerShape(32.dp, 32.dp, 0.dp, 0.dp)),
             contentAlignment = Alignment.TopCenter
         ) {
@@ -69,7 +69,7 @@ fun ContentCharacter(character: CharacterDomain) {
 
 @Composable
 fun CharacterInfo(character: CharacterDomain) {
-
+ 
 }
 
 @Composable
