@@ -30,7 +30,7 @@ import com.xevidev.rickandmortyapp.domain.model.CharacterDomain
 @Composable
 fun SingleCharacterScreen(
     navigator: DestinationsNavigator,
-    character: CharacterDomain
+    character: CharacterDomain 
 ) {
     Column(Modifier.fillMaxSize()) {
         TopBar(navigator = navigator)
@@ -97,5 +97,5 @@ fun TopBar(navigator: DestinationsNavigator) {
                     contentDescription = ""
                 )
             }
-        }) 
+        })
 }
