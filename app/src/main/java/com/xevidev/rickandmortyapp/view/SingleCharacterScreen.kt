@@ -69,7 +69,7 @@ fun ContentCharacter(character: CharacterDomain) {
 
 @Composable
 fun CharacterInfo(character: CharacterDomain) {
- 
+
 }
 
 @Composable
@@ -97,5 +97,5 @@ fun TopBar(navigator: DestinationsNavigator) {
                     contentDescription = ""
                 )
             }
-        })
+        }) 
 }
