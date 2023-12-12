@@ -30,7 +30,7 @@ import com.xevidev.rickandmortyapp.domain.model.CharacterDomain
 @Composable
 fun SingleCharacterScreen(
     navigator: DestinationsNavigator,
-    character: CharacterDomain 
+    character: CharacterDomain
 ) {
     Column(Modifier.fillMaxSize()) {
         TopBar(navigator = navigator)
@@ -55,21 +55,24 @@ fun ContentCharacter(character: CharacterDomain) {
                 .clip(shape = RoundedCornerShape(32.dp, 32.dp, 0.dp, 0.dp)),
             contentAlignment = Alignment.TopCenter
         ) {
-            Column( 
+            Column(
                 Modifier
                     .fillMaxSize()
                     .background(Color.Blue)
             ) {
                 CharacterInfo(character)
-            } 
+            }
         }
- 
+
     }
 }
 
 @Composable
 fun CharacterInfo(character: CharacterDomain) {
-
+    Text(text =character.name)
+    Text(text =character.status)
+    Text(text =character.species)
+    
 }
 
 @Composable
