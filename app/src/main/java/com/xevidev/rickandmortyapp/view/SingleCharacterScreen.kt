@@ -72,6 +72,8 @@ fun CharacterInfo(character: CharacterDomain) {
     Text(text =character.name)
     Text(text =character.status)
     Text(text =character.species)
+    Text(text =character.location.name)
+
     
 }
 
