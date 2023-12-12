@@ -58,7 +58,7 @@ fun ContentCharacter(character: CharacterDomain) {
             Column(
                 Modifier
                     .fillMaxSize()
-                    .background(Color.Blue)
+                    .background(Color.Yellow)
             ) {
                 CharacterInfo(character)
             }
@@ -69,12 +69,11 @@ fun ContentCharacter(character: CharacterDomain) {
 
 @Composable
 fun CharacterInfo(character: CharacterDomain) {
-    Text(text =character.name)
-    Text(text =character.status)
-    Text(text =character.species)
-    Text(text =character.location.name)
-
-    
+    Text(text = character.name)
+    Text(text = character.status)
+    Text(text = character.species)
+    Text(text = character.location.name)
+    Text(text = character.origin.name)
 }
 
 @Composable
