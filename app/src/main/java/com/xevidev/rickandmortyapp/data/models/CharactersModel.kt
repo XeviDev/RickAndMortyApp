@@ -8,5 +8,6 @@ data class CharactersModel(
     @SerializedName("status")val status: String,
     @SerializedName("species")val species: String,
     @SerializedName("image")val image: String,
-    @SerializedName("location") val location:LocationModel
+    @SerializedName("location") val location:LocationModel,
+    @SerializedName("origin") val origin:OriginModel
 )
