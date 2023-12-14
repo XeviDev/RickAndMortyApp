@@ -86,7 +86,7 @@ fun CharacterImage(image: String) {
         model = image,
         contentDescription = "character img",
         modifier = Modifier.fillMaxWidth()
-    )
+    ) 
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
