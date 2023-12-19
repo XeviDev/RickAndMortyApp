@@ -78,7 +78,7 @@ fun CharacterInfo(character: CharacterDomain) {
     IconButton(onClick = { /*TODO*/ }, ) {
         Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorite")
     }
-}
+} 
 
 @Composable
 fun CharacterImage(image: String) {
