@@ -79,7 +79,7 @@ fun CharacterInfo(character: CharacterDomain) {
         Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorite")
     }
 } 
-
+ 
 @Composable
 fun CharacterImage(image: String) {
     AsyncImage(
