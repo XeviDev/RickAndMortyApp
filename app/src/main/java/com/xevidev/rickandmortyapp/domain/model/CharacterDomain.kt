@@ -18,4 +18,5 @@ data class CharacterDomain(
     val origin: @RawValue OriginModel
 ) : Parcelable
 
-fun CharactersModel.parseDomain() = CharacterDomain(id, name, status, species, image, location, origin)
+fun CharactersModel.parseDomain() =
+    CharacterDomain(id, name, status, species, image, location, origin)
