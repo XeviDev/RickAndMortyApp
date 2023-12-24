@@ -10,7 +10,9 @@ class RickMortyRepository@Inject constructor(private val service: CharactersServ
 
     suspend fun getCharactersList():List<CharacterDomain>{
         val response:List<CharactersModel> = service.getCharactersList()
-        return response.map { characterModel -> characterModel.parseDomain() }
+        return response.map {
+                characterModel -> characterModel.parseDomain()
+        }
     }
 
 }
